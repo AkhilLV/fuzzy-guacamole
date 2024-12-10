@@ -1,0 +1,59 @@
+.email-list {
+  width: 40%;
+}
+
+.email-list .email {
+  border: 1px solid var(--color-border);
+  cursor: pointer;
+  padding: 7px 20px;
+  border-radius: 7px;
+  margin-bottom: 10px;
+  transition: all 250ms;
+
+  color: var(--color-text);
+
+  display: flex;
+  gap: 15px;
+}
+
+.email-list .email:hover {
+  border: 1px solid var(--color-accent);
+}
+
+.email-list .active .email {
+  border-color: var(--color-accent);
+}
+
+.read .email {
+  background: var(--color-read-background);
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
+  background: var(--color-accent);
+
+  flex-shrink: 0;
+}
+
+.email-list .email .from {
+  margin-bottom: 5px;
+}
+
+.email-list .email .subject {
+  margin-bottom: 20px;
+}
+
+.email-list .email .short-description {
+  margin-bottom: 20px;
+}
+
+.favorite-badge {
+  color: var(--color-accent);
+  margin-left: auto;
+}

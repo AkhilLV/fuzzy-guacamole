@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-accent: #e54065;
+  --color-background: #f4f5f9;
+  --color-border: #cfd2dc;
+  --color-text: #636363;
+  --color-filter-button: #e1e4ea;
+  --color-read-background: #f2f2f2;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+a {
+  all: unset;
+}
+
+span.bold {
+  font-weight: bold;
+  color: #000;
+}
+
+.flex {
+  display: flex;
+  gap: 30px;
+}
+
+.toast {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+  width: fit-content;
+  background: var(--color-accent);
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  border-radius: 200px;
+}
+
+.stage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dot-flashing {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: var(--color-accent);
+  color: var(--color-accent);
+  animation: dot-flashing 1s infinite linear alternate;
+  animation-delay: 0.5s;
+}
+.dot-flashing::before,
+.dot-flashing::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 0;
+}
+.dot-flashing::before {
+  left: -15px;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: var(--color-accent);
+  color: var(--color-accent);
+  animation: dot-flashing 1s infinite alternate;
+  animation-delay: 0s;
+}
+.dot-flashing::after {
+  left: 15px;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: var(--color-accent);
+  color: var(--color-accent);
+  animation: dot-flashing 1s infinite alternate;
+  animation-delay: 1s;
+}
+
+@keyframes dot-flashing {
+  0% {
+    background-color: var(--color-accent);
+  }
+  50%,
+  100% {
+    background-color: rgba(152, 128, 255, 0.2);
+  }
+}
+

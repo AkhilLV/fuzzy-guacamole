@@ -1,0 +1,114 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.auth-heading {
+  margin-bottom: 40px;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  width: 80%;
+  margin: 50px auto;
+}
+
+.flex {
+  display: flex;
+  width: 600px;
+}
+
+.graph {
+  width: 500;
+}
+
+.toast {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+  width: fit-content;
+  background: crimson;
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 10px 20px;
+}
+
+form input {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  margin-top: 5px;
+}
+
+button.primary {
+  all: unset;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  background: crimson;
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+button.primary img {
+  margin-right: 5px;
+}
+
+button.outline {
+  background: white;
+  border: 1px solid #ccc;
+  color: black;
+}
+
+.auth-contain button.primary {
+  margin-bottom: 50px;
+}
+
+/* Dashboard */
+
+.dashboard header {
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.dashboard header h1 {
+  margin-right: 20px;
+}
+
+.dashboard header .logout {
+  margin-left: auto;
+}
+
+.dashboard h1 button {
+  margin-left: 50px;
+}
+
+.dashboard .user-greeting {
+  margin-bottom: 30px;
+  font-size: 1.3rem;
+}
+
+.dashboard label.start {
+  margin-right: 20px;
+}
+
+.dashboard input {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  font-family: Arial, sans-serif;
+  margin-left: 10px;
+}
+
+.dashboard .clear-cookie {
+  margin-top: 30px;
+  display: block;
+}
+

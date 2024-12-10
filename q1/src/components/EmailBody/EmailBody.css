@@ -1,0 +1,38 @@
+.body-container {
+  width: 70%;
+}
+
+.email-body {
+  border: 1px solid var(--color-border);
+  border-radius: 7px;
+  padding: 20px 40px;
+  padding-bottom: 50px;
+}
+
+.email-body .flex {
+  margin-bottom: 20px;
+}
+
+.email-body .fav-btn {
+  all: unset;
+  background: var(--color-accent);
+  color: #fff;
+  font-size: 0.8rem;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 200px;
+  margin-left: auto;
+}
+
+.email-body .date,
+.email-body .content {
+  margin-left: 70px;
+}
+
+.email-body .date {
+  margin-bottom: 40px;
+}
+
+.email-body .content p {
+  margin-bottom: 15px;
+}

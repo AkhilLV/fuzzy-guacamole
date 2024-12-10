@@ -1,0 +1,22 @@
+.filter {
+  font-size: 1rem;
+  margin-bottom: 40px;
+}
+
+.filter button {
+  all: unset;
+  font-size: 0.8rem;
+  cursor: pointer;
+  padding: 7px 14px;
+  border-radius: 300px;
+  margin-right: 10px;
+}
+
+.filter button.active {
+  background-color: #e1e4ea;
+  border: #babcc1 1px solid;
+}
+
+.filter button:first-child {
+  margin-left: 15px;
+}
