@@ -13,14 +13,17 @@ export default function Register() {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:3000/auth/signup", {
-        method: "POST",
-        body: JSON.stringify({ username, password }),
-        headers: {
-          "Content-Type": "application/json",
-        },
-        credentials: "include",
-      });
+      const response = await fetch(
+        "https://fuzzy-guacamole.onrender.com/auth/signup",
+        {
+          method: "POST",
+          body: JSON.stringify({ username, password }),
+          headers: {
+            "Content-Type": "application/json",
+          },
+          credentials: "include",
+        }
+      );
 
       const resData = await response.json();
 

@@ -10,11 +10,14 @@ import Dashboard from "./pages/Dashboard.jsx";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute.jsx";
 import { AuthProvider } from "./components/AuthProvider/AuthProvider.jsx";
 
+import Home from "./pages/Home.jsx";
+
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <AuthProvider>
       <BrowserRouter>
         <Routes>
+          <Route path="/" element={<Home />} />
           <Route
             path="/dashboard"
             element={<PrivateRoute element={<Dashboard />} />}

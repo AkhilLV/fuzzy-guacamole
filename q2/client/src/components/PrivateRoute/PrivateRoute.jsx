@@ -9,7 +9,7 @@ const PrivateRoute = ({ element }) => {
   ) : (
     <div>
       Not logged in.{" "}
-      <Link to={`/login${window.location.search}`}>Login to view data</Link>
+      <Link to={`/login/${window.location.search}`}>Login to view data</Link>
     </div>
   );
 };

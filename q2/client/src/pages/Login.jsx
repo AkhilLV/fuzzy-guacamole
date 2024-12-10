@@ -15,14 +15,17 @@ export default function Login() {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:3000/auth/login", {
-        method: "POST",
-        body: JSON.stringify({ username, password }),
-        headers: {
-          "Content-Type": "application/json",
-        },
-        credentials: "include",
-      });
+      const response = await fetch(
+        "https://fuzzy-guacamole.onrender.com/auth/login",
+        {
+          method: "POST",
+          body: JSON.stringify({ username, password }),
+          headers: {
+            "Content-Type": "application/json",
+          },
+          credentials: "include",
+        }
+      );
 
       if (response.status !== 200) {
         throw Error("Not authenticated");

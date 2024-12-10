@@ -8,9 +8,12 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await fetch("http://localhost:3000/auth/check", {
-          credentials: "include",
-        });
+        const response = await fetch(
+          "https://fuzzy-guacamole.onrender.com/auth/check",
+          {
+            credentials: "include",
+          }
+        );
         const resData = await response.json();
 
         if (!resData.success) {

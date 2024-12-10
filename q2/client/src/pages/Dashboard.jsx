@@ -67,7 +67,7 @@ export default function Dashboard() {
     labels: ["A", "B", "C", "D", "E", "F"],
     datasets: [
       {
-        label: "Sales",
+        label: "Feature",
         data: [0, 0, 0, 0, 0, 0],
         backgroundColor: "rgba(75, 192, 192, 0.2)",
         borderColor: "rgba(75, 192, 192, 1)",
@@ -104,7 +104,7 @@ export default function Dashboard() {
       },
       title: {
         display: true,
-        text: "Monthly Sales",
+        text: "Features and consumption by hours",
       },
     },
     indexAxis: "y",
@@ -141,10 +141,10 @@ export default function Dashboard() {
   const prevFilters = JSON.parse(getCookie(authState.username));
   const [filters, setFilters] = useState(
     prevFilters || {
-      age: searchParams.get("age") || null,
-      start: searchParams.get("start") || "2022-10-04",
-      end: searchParams.get("end") || "2022-10-29",
-      gender: searchParams.get("gender") || null,
+      age: searchParams.get("age") || prevFilters?.age || null,
+      start: searchParams.get("start") || prevFilters?.start || "2022-10-04",
+      end: searchParams.get("end") || prevFilters?.end || "2022-10-29",
+      gender: searchParams.get("gender") || prevFilters?.gender || null,
     }
   );
 
@@ -154,7 +154,7 @@ export default function Dashboard() {
         const queryString = buildQueryString(filters);
 
         const response = await fetch(
-          `http://localhost:3000/data?${queryString}`,
+          `https://fuzzy-guacamole.onrender.com/data?${queryString}`,
           {
             credentials: "include",
           }
@@ -173,7 +173,7 @@ export default function Dashboard() {
         setCookie(authState.username, JSON.stringify(filters));
 
         const lineResponse = await fetch(
-          `http://localhost:3000/data/time-trend?${queryString}`,
+          `https://fuzzy-guacamole.onrender.com/data/time-trend?${queryString}`,
           {
             method: "POST",
             credentials: "include",
@@ -226,9 +226,12 @@ export default function Dashboard() {
   };
 
   const handleLogoutClick = async () => {
-    const response = await fetch("http://localhost:3000/auth/logout", {
-      credentials: "include",
-    });
+    const response = await fetch(
+      "https://fuzzy-guacamole.onrender.com/auth/logout",
+      {
+        credentials: "include",
+      }
+    );
 
     const resData = await response.json();
 
